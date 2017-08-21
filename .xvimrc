@@ -1,0 +1,142 @@
+
+"*************************************************
+"Setting of auto saveing
+"set autowrite
+"
+"function s:AutoWriteIfPossible()
+"  if &modified && !&readonly && bufname('%') !=# '' && &buftype ==# '' && expand("%") !=# ''
+"    write
+"  endif
+"endfunction
+"
+"autocmd CursorHold * call s:AutoWriteIfPossible()
+"autocmd CursorHoldI * call s:AutoWriteIfPossible()
+
+"*************************************************
+"setting the colorscheme
+
+" syntax on
+" colorscheme molokai   
+"
+" hi String ctermfg=darkred " < > in include 
+" hi Include ctermfg=126  " include 
+" hi Comment ctermfg=25  " comment out
+" hi Structure ctermfg=2 " class 
+" hi Statement ctermfg=130 " public,private in class 
+" hi Type ctermfg=2  " void  and int
+" hi Number ctermfg=darkred  " number
+" hi Float ctermfg=darkred  " number
+" hi Boolean ctermfg=darkred  " false true
+" hi cConstant ctermfg=darkred  " NULL
+" hi conditional ctermfg=130  " if
+" hi Exception ctermfg=130  " try
+" hi SpecialChar ctermfg=126 " %d
+" hi StorageClass ctermfg=2 " static
+" hi Repeat ctermfg=130 " for
+" hi Visual  ctermbg=235 "23 " visual mode
+" hi Search      ctermfg=cyan ctermbg=12 "4 
+" hi LineNr      ctermfg=darkgreen
+" hi WarningMsg  ctermfg=Yellow
+" hi MatchParen  term=reverse ctermfg=14 ctermbg=12 guifg=#FFFFFF guibg=Cyan
+
+" high light () 
+" hi MatchParen ctermbg=4
+
+ "*************************************************
+ set matchpairs=(:),{:},[:],<:>
+ set noswapfile
+ set laststatus=2  " Output Status line 
+ set updatetime=0  "swapを作るまでの時間m秒
+ set number
+ set title
+" set tabstop=4
+" set expandtab
+ set shiftwidth=4
+ set smartindent
+ set cindent 
+ set nrformats-=octal
+ set hidden
+ set history=500
+ set virtualedit=block
+ set backspace=indent,eol,start
+ set hlsearch
+ set whichwrap=b,s,h,l,<,>,[,]  " iminaikamo?
+ set incsearch "for search
+" set listchars=tab:>\ ,extends:< "Tab setting ?
+" set showmatch " () {} []    xvimでは聞かない
+ "set scrolloff=999 "fix cursor centor
+ set scrolloff=16 "fix cursor centor
+ set fileformat=unix "\n change format unix
+ set nowrap "Cousor Movement
+ set linebreak
+ set clipboard=unnamedplus "for using clipboard
+ set clipboard=unnamed,autoselect
+ set clipboard=unnamedplus
+ " mac settings
+ set clipboard+=unnamed
+
+ set wrap "for return of sentence
+ set mouse=a "setting for iterm 
+
+ "大文字小文字を区別しない
+ set ignorecase
+ "大文字で検索されたら対象を大文字限定にする
+ set smartcase
+
+"*************************************************
+"python setting
+" autocmd FileType python setl autoindent
+" autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+" autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+"*************************************************
+
+ map n nzz
+ map N Nzz
+"検索結果を今のものから検索し始める
+ map * *Nzzh 
+ map # #zz
+
+ nnoremap <backspace> i<backspace><ESC>l
+ nnoremap O A<return><ESC>k
+ nnoremap P i<Space><ESC>
+ nnoremap <C-c> ggVGy
+
+ nnoremap Z 0i************************************************************<return>・
+ nnoremap X 0i------------------------------<ESC>0
+
+ noremap h b
+ noremap b h
+ noremap l w
+ noremap w l
+
+ nnoremap j gj
+ nnoremap k gk
+ nnoremap gj j
+ nnoremap gk k
+
+ noremap o 0
+ noremap e $
+
+ nnoremap R <NOP>
+
+ "ノーマルモード時だけ;と:を入れ替える
+ nnoremap ; :
+ nnoremap : ;
+ 
+ "ビジュアルモード選択した部分を*で検索できる。これはかなり便利です。
+ vnoremap * "zy:let @/ = @z<CR>n
+
+
+" jjでエスケープして上書き保存
+ inoremap jj <Esc>
+
+
+"Setting of tab 
+ "nnoremap L <Cmd><Shift> {
+ "nnoremap H <Cmd><Shift> }
+
+
+
+
+
+
