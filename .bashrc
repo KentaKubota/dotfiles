@@ -118,8 +118,16 @@ alias cgrep='grep -n --color=always'
 alias efind='find -E ./'
 alias o='open .'
 
+#-----------------------------
+alias updateBashrc='source ~/.bashrc'
+#-----------------------------
+# git
+alias gg='git log -S'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git lg'
+alias ga='git add'
 alias Git_save='git commit -am "save"'
-
 
 
 
@@ -163,6 +171,10 @@ function l(){
 }
 
 
+#*********************************************************
+function gc(){
+    git commit -m "$*"
+}
 
 #*********************************************************
 function Make_latex_pdf(){
