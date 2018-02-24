@@ -85,8 +85,12 @@ set focuscontent
 " コマンドモードではIMEをOFFに macの場合はコメントアウトしとく
 "style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
-
 " 自動補完の候補
 set complete=sl
+
+"検索結果ハイライト
+"set hlsearch
+
+
 
 "***********************************************
