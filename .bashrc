@@ -112,9 +112,8 @@ alias Shutdown_pc='sudo shutdown -h now'
 alias Suspend_pc='dbus-send --system --print-reply=literal --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Suspend boolean:true'
 alias Reboot='sudo reboot'
     # mac alias
-export LSCOLORS=EaFxcxdxCxegedabagacad
+#export LSCOLORS=EaFxcxdxCxegedabagacad
 
-alias ls='ls -G -F'
 alias cgrep='grep -n --color=always'
 alias efind='find -E ./'
 alias o='open .'
@@ -168,7 +167,7 @@ function cd(){
 #}
 
 function l(){
-    ls -1tr
+    ls -1tr --color=always
 }
 
 
