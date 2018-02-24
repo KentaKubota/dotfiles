@@ -5,3 +5,5 @@ ln -sf ~/dotfiles/.vimperatorrc ~/.vimperatorrc
 ln -sf ~/dotfiles/.xvimrc ~/.xvimrc
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+
+source ~/.bashrc
