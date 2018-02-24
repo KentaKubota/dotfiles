@@ -89,6 +89,7 @@ alias diff='colordiff -u'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias less='less -R'
+alias top='top -a'
 alias Date_mkdir='date +%y%m%d | xargs mkdir'
 #alias cb='catkin build'
 alias cb='cd ~/catkin_ws/src/ && catkin build && cd -'
@@ -172,9 +173,15 @@ function l(){
 
 
 #*********************************************************
+function gca(){
+    git commit -am "$*"
+}
+
+#*********************************************************
 function gc(){
     git commit -m "$*"
 }
+
 
 #*********************************************************
 function Make_latex_pdf(){
