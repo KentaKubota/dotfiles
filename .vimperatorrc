@@ -38,7 +38,7 @@ map l gt
 
 "C-bでブックマークを開くショートカットができるようにする
 noremap <C-b> i<C-b>
-inoremap <C-b> <insert><C-b><insert>
+"inoremap <C-b> <insert><C-b><insert>
 
 
 "C-Pでプライベートウィンドウを開くショートカットができるようにする
@@ -59,7 +59,7 @@ inoremap <C-n> <insert><C-n><insert>
 
 "C-fで検索できるようにする
 noremap <C-f> i<C-f>
-inoremap <C-f> <insert><C-f><insert>
+"inoremap <C-f> <insert><C-f><insert>
 
 "C-p印刷でるようにする
 noremap <C-p> i<C-p>
