@@ -82,6 +82,7 @@ esac
 
 
 alias e='exit'
+alias o='xdg-open .' # open filer in current directory
 alias vim='vim -p'
 alias cgrep='grep -n --color=always'
 alias cl='clear'
@@ -92,33 +93,17 @@ alias less='less -R'
 alias top='top -a'
 alias Date_mkdir='date +%y%m%d | xargs mkdir'
 #alias cb='catkin build'
-alias cb='cd ~/catkin_ws/src/ && catkin build && cd -'
+alias cb='cd ~/catkin_ws/ && catkin_make && cd -'
 #alias Backup_ubuntu='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
-alias Backup_mac='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
-alias cw='cd /home/kenta/catkin_ws/src/'
+#alias Backup_mac='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
+alias cw='cd ~/catkin_ws/src/'
 alias C='./a.out'
 alias Latex_pdf_out='~/.latex_pdf_out.sh'
 #alias Run_program='~/.run_program.sh'
-alias Note='cd ~/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt Panasonic.txt'
-#alias Note='cd ~/Documents/ && vim -p Memo DoneList Application English panasonic/panasonic'
-#alias Note='cd ~/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Research.txt English.txt panasonic/panasonic.txt'
-alias Open_filer='xdg-open .' # open filer in current directory
+alias Note='cd ~/Desktop/Parallels\ Shared\ Folders/Home/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt Pa.txt'
 alias Graph='eog "$a" & &> /dev/null'
 alias Xmodmap='xmodmap ~/.Xmodmap'
-alias Webdav='sudo mount -t davfs -o uid=$UID,gid=$(id -g) http://www.hayashibara-lab.it-chiba.ac.jp/member/ ~/webdav/'
 alias Webdav_out='sudo umount ~/webdav/'
-alias t='yes | tw'
-alias Shutdown_pc='sudo shutdown -h now'
-alias Suspend_pc='dbus-send --system --print-reply=literal --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Suspend boolean:true'
-alias Reboot='sudo reboot'
-    # mac alias
-#export LSCOLORS=EaFxcxdxCxegedabagacad
-
-alias cgrep='grep -n --color=always'
-alias efind='find -E ./'
-alias o='open .'
-
-#-----------------------------
 alias updateBashrc='source ~/.bashrc'
 #-----------------------------
 # git
@@ -128,8 +113,7 @@ alias gd='git diff'
 alias gl='git lg'
 alias ga='git add'
 alias Git_save='git commit -am "save"'
-
-
+#-----------------------------
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -214,8 +198,7 @@ echo  "\n----------  Build Succeeded  ----------\n"
 
 #*********************************************************
 # share history each terminal 
-
-# export PROMPT_COMMAND='history -a; history -r'
+export PROMPT_COMMAND='history -a; history -r'
 
 #*********************************************************
 # Powerline setting
@@ -225,11 +208,9 @@ function _update_ps1(){
 export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
 
-source ~/.git-completion.bash
-
-# command + space で端末を起動する際　session restored tteって出るのでclで対策 
-cl
-
 #default editor is vim
 export EDITOR=/usr/bin/vim
 
+# ROS settings
+source /opt/ros/indigo/setup.bash
+source ~/catkin_ws/devel/setup.bash
