@@ -212,5 +212,5 @@ export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 export EDITOR=/usr/bin/vim
 
 # ROS settings
-source /opt/ros/indigo/setup.bash
+source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
