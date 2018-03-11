@@ -217,7 +217,7 @@ export EDITOR=/usr/bin/vim
 #*********************************************************
 
 # ROS settings
-source /opt/ros/indigo/setup.bash
-source ~/catkin_ws/devel/setup.bash
+#source /opt/ros/indigo/setup.bash
+#source ~/catkin_ws/devel/setup.bash
 
 
