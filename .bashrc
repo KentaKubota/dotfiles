@@ -186,11 +186,11 @@ fi
 g++ "$1" "$2" "$3" "$4" "$5" "$6"
 
 if [ "$?" -eq 1 ]; then
-echo  "\n----------  Build Failed  ----------\n"
+echo  -e "\n----------  Build Failed  ----------\n"
     exit 1
 fi
 
-echo  "\n----------  Build Succeeded  ----------\n"
+echo  -e "\n----------  Build Succeeded  ----------\n"
 ./a.out
 
 }
