@@ -90,10 +90,9 @@ alias diff='colordiff -u'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias less='less -R'
-alias top='top -a'
 alias Date_mkdir='date +%y%m%d | xargs mkdir'
 #alias cb='catkin build'
-alias cb='cd ~/catkin_ws/ && catkin_make && cd -'
+alias cb='cd ~/catkin_ws/ && catkin_make && cd - && source ~/.bashrc'
 #alias Backup_ubuntu='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
 #alias Backup_mac='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
 alias cw='cd ~/catkin_ws/src/'
@@ -201,16 +200,24 @@ echo  "\n----------  Build Succeeded  ----------\n"
 export PROMPT_COMMAND='history -a; history -r'
 
 #*********************************************************
+# Add date to history command
+export HISTTIMEFORMAT='%F %T '
+
+#*********************************************************
 # Powerline setting
 function _update_ps1(){
     export PS1="\n\n$(~/powerline-shell.py $? 2> /dev/null)\n\[\e[1;34m\]`LC_ALL=C date | awk '{printf "%s %s.%s %s",$1,$2,$3,$4}' | sed "s/...$//g"`\[\e[0m\] \[\e[0;32m\]$\[\e[0m\] "
 }
 export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
-
+#*********************************************************
 #default editor is vim
 export EDITOR=/usr/bin/vim
+
+#*********************************************************
 
 # ROS settings
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+
+
