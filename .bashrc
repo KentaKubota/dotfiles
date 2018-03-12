@@ -97,13 +97,14 @@ alias cb='cd ~/catkin_ws/ && catkin_make && cd - && source ~/.bashrc'
 #alias Backup_mac='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
 alias cw='cd ~/catkin_ws/src/'
 alias C='./a.out'
-alias Latex_pdf_out='~/.latex_pdf_out.sh'
+#alias Latex_pdf_out='~/.latex_pdf_out.sh'
 #alias Run_program='~/.run_program.sh'
 alias Note='cd ~/Desktop/Parallels\ Shared\ Folders/Home/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt Pa.txt'
+alias MacHome='cd ~/Desktop/Parallels\ Shared\ Folders/Home/'
 alias Graph='eog "$a" & &> /dev/null'
 alias Xmodmap='xmodmap ~/.Xmodmap'
 alias Webdav_out='sudo umount ~/webdav/'
-alias updateBashrc='source ~/.bashrc'
+alias UpdateBashrc='source ~/.bashrc'
 #-----------------------------
 # git
 alias gg='git log -S'
@@ -166,9 +167,9 @@ function gc(){
 
 
 #*********************************************************
-function Make_latex_pdf(){
-ls -1 | grep png$ | awk -F. '{print $1}' | while read f ; do convert ${f}.png ${f}.pdf; extractbb ${f}.pdf; done
-}
+#function Make_latex_pdf(){
+#ls -1 | grep png$ | awk -F. '{print $1}' | while read f ; do convert ${f}.png ${f}.pdf; extractbb ${f}.pdf; done
+#}
 
 #*********************************************************
 function Calc_date(){ 
