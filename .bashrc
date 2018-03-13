@@ -99,11 +99,12 @@ alias cw='cd ~/catkin_ws/src/'
 alias C='./a.out'
 alias Latex_pdf_out='~/.latex_pdf_out.sh'
 #alias Run_program='~/.run_program.sh'
-alias Note='cd ~/Desktop/Parallels\ Shared\ Folders/Home/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt Pa.txt'
+alias Note='vim ~/Documents/note.txt'
 alias Graph='eog "$a" & &> /dev/null'
 alias Xmodmap='xmodmap ~/.Xmodmap'
 alias Webdav_out='sudo umount ~/webdav/'
 alias updateBashrc='source ~/.bashrc'
+alias sudovim='sudo vim -u ~/.vimrc'
 #-----------------------------
 # git
 alias gg='git log -S'
