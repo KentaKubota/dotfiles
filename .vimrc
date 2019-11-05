@@ -72,13 +72,26 @@ set t_Co=256
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'path', 'modified' ] ],
+      \ },
+      \ 'component_function': {
+      \   'path': 'Path'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
+
+    function! Path()
+        let b = substitute(expand('%:p'), $HOME, '~', '')
+        let path_list = split(b,'/')
+        if 2 < len(path_list)
+            return join([path_list[-3], path_list[-2], path_list[-1]], '  ')
+        else
+            return join([path_list[-2], path_list[-1]], '  ')
+      endfunction
 "*************************************************
 "setting the colorscheme
 

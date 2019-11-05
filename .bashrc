@@ -104,7 +104,6 @@ alias Note='cd ~/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.
 alias Graph='eog "$a" & &> /dev/null'
 alias Xmodmap='xmodmap ~/.Xmodmap'
 alias Webdav_out='sudo umount ~/webdav/'
-alias t='yes | tw'
 alias ls='ls -G -F'
 alias cgrep='grep -n --color=always'
 alias efind='find -E ./'
@@ -143,6 +142,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+#*********************************************************
+function t(){
+    yes | tw "$*"
+
+}
 
 
 #*********************************************************
