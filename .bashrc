@@ -94,28 +94,30 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias less='less -R'
 alias top='top -a'
-alias Date_mkdir='date +%y%m%d | xargs mkdir'
+alias Date_mkdir='date +%Y%m%d | xargs mkdir'
 alias Backup_mac='cd ~/.. && rsync -arpv --delete kenta/ /media/kenta/Transcend/BackUp/ubuntu/ && cd -'
 alias cw='cd /home/kenta/catkin_ws/src/'
 alias C='./a.out'
 alias Latex_pdf_out='~/.latex_pdf_out.sh'
 #alias Run_program='~/.run_program.sh'
-alias Note='cd ~/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt Pa.txt'
+#alias Note='cd ~/Dropbox/Documents/ && vim -p Memo.txt DoneList.txt Application.txt English.txt'
+alias Note='vim ~/Dropbox/Documents/Memo.txt'
 alias Graph='eog "$a" & &> /dev/null'
 alias Xmodmap='xmodmap ~/.Xmodmap'
 alias Webdav_out='sudo umount ~/webdav/'
 alias ls='ls -G -F'
 alias cgrep='grep -n --color=always'
 alias efind='find -E ./'
-
+alias cc='fc -ln  | tail -n1 | tr "\t\ " "$ " | pbcopy && echo -e "\033[0;33mCopied the previous command\033[0;39m"'
 #-----------------------------
-alias updateBashrc='source ~/.bashrc'
+alias UpdateBashrc='source ~/.bashrc'
 #-----------------------------
 # git
 alias gg='git log -S'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git lg'
+alias gls='git lg -n8'
 alias ga='git add'
 alias Git_save='git commit -am "save"'
 
@@ -162,9 +164,9 @@ function l(){
 }
 
 #*********************************************************
-function gca(){
-    git commit -am "$*"
-}
+#function gca(){
+#    git commit -am "$*"
+#}
 
 #*********************************************************
 function gc(){

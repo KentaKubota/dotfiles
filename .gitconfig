@@ -17,3 +17,5 @@ lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %n%
 
 [fetch]
 	prune = true
+[merge]
+	ff = false
