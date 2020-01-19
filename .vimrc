@@ -1,4 +1,3 @@
-
 "*************************************************
 "自動保存設定
 set autowrite
@@ -14,24 +13,6 @@ autocmd CursorHold * call s:AutoWriteIfPossible()
 autocmd CursorHoldI * call s:AutoWriteIfPossible()
 
 "*************************************************
-"ネオバンドル設定
-set nocompatible
-filetype off
-
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#begin(expand('~/.vim/bundle/'))
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'aereal/vim-colors-japanesque'
-    NeoBundle 'toyamarinyon/vim-swift'
-    NeoBundle 'apple/swift'
-    call neobundle#end()
-endif
-
-filetype plugin indent on
-
-
-"*************************************************
 "予測変換設定
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -42,56 +23,10 @@ imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 
 
 "*************************************************
-"バンドル設定
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-set t_Co=256
-"set ambiwidth=double
-
-
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'path', 'modified' ] ],
-      \ },
-      \ 'component_function': {
-      \   'path': 'Path'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
-
-function! Path()
-    let b = substitute(expand('%:p'), $HOME, '~', '')
-    let path_list = split(b,'/')
-    if 2 < len(path_list)
-        return join([path_list[-3], path_list[-2], path_list[-1]], '  ')
-    elseif 0 == len(path_list)
-        return "[No Name]"
-    else
-        return join([path_list[-2], path_list[-1]], '  ')
- endfunction
-
-
-"*************************************************
 "カラースキーム設定
 
 syntax on
-colorscheme molokai
+"colorscheme molokai
 
 hi String ctermfg=darkred " < > in include
 hi Include ctermfg=126  " include 
@@ -114,7 +49,6 @@ hi LineNr      ctermfg=darkgreen
 hi WarningMsg  ctermfg=Yellow
 hi MatchParen  term=reverse ctermfg=14 ctermbg=12 guifg=#FFFFFF guibg=Cyan
 
-
 "*************************************************
 
 set noswapfile
@@ -122,7 +56,6 @@ set laststatus=2  " Output Status line
 set updatetime=0  "swapを作るまでの時間m秒
 set number
 set title
-
 
 set cindent
 set nrformats-=octal
@@ -151,9 +84,6 @@ set backupskip=/tmp/*,/private/tmp/*  "for crontab setting
 "set virtualedit=onemore  " 行末の1文字先までカーソルを移動できるように
 set ignorecase      "大文字小文字を区別しない
 set smartcase       " 検索文字列に大文字が含まれている場合は区別して検索する
-
-
-
 
 "タブ設定
 set tabstop=4       "画面上で表示する1つのタブの幅
@@ -214,7 +144,7 @@ noremap e $
 " jjでエスケープして上書き保存
 inoremap jj <Esc>
 
-"ビジュアルモード選択した部分を*で検索できる。これはかなり便利です。
+"ビジュアルモード選択した部分を*で検索
 vnoremap * "zy:let @/ = @z<CR>n
 
 " remove no use space  ex  printf;'     '  -> printf;''

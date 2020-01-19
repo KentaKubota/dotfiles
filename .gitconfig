@@ -1,6 +1,6 @@
 [user]
-	name = Kenta Kubota
-	email = zingl.0523@gmail.com
+	name = K
+	email = xxxxxxxxxx@gmail.com
 [color]
 	ui = auto
     diff = auto 
@@ -13,7 +13,6 @@
 
 [alias]
 lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %n%s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative
-lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %n%s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative
 
 [fetch]
 	prune = true
